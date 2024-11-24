@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:universeproject/Components/already_have_an_account_check.dart';
 import 'package:universeproject/Components/constants.dart';
 import 'package:universeproject/Components/rounded_input_field.dart';
 import 'package:universeproject/Components/rounded_password_field.dart';
+import 'package:universeproject/Screens/Login/login_screen.dart';
 import 'package:universeproject/Screens/Login/login_successful.dart';
 import 'package:universeproject/Screens/SignUp/background.dart';
 
@@ -69,6 +71,12 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
+
+          AlreadyHaveAnAccountCheck(
+            login: false,
+            press: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){return const LoginScreen();}));
+          }),
         ],
       ),
     );
