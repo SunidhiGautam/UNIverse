@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:universeproject/Components/already_have_an_account_check.dart';
 import 'package:universeproject/Components/constants.dart';
 import 'package:universeproject/Components/rounded_input_field.dart';
 import 'package:universeproject/Components/rounded_password_field.dart';
 import 'package:universeproject/Screens/Login/background.dart';
 import 'package:universeproject/Screens/Login/login_successful.dart';
+import 'package:universeproject/Screens/SignUp/signup_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -36,15 +38,45 @@ class Body extends StatelessWidget {
           RoundedPasswordField(
             onChanged: (value) => {},
           ),
+
           Container(
-            width : size.width * 0.4,
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onDoubleTap: () {
+                  // Uncomment this when ForgetPasswordScreen is implemented
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => ForgetPasswordScreen(),
+                  //   ),
+                  // );
+                },
+                child: Text(
+                  "Forgot Password?             ",
+                  style: GoogleFonts.notoSerif(
+                    fontWeight: FontWeight.bold,
+                    color: const Color.fromARGB(255, 87, 49, 3),
+                  ),
+                ),
+              ),
+            ),
+
+             SizedBox(height: size.height * 0.03),
+
+
+          Container(
+            width: size.width * 0.4,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: kPrimaryColor,
               ),
               onPressed: () {
-                Navigator.push(context, 
-                MaterialPageRoute(builder: (context){return LoginSuccessful();}),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return const LoginSuccessful();
+                  }),
+                );
               },
               child: const Text(
                 "LOGIN",
@@ -52,8 +84,12 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
+          AlreadyHaveAnAccountCheck(press: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){return const SignupScreen();}));
+          }),
         ],
       ),
     );
   }
 }
+
