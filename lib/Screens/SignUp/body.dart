@@ -4,8 +4,8 @@ import 'package:universeproject/Components/already_have_an_account_check.dart';
 import 'package:universeproject/Components/constants.dart';
 import 'package:universeproject/Components/rounded_input_field.dart';
 import 'package:universeproject/Components/rounded_password_field.dart';
+import 'package:universeproject/Screens/HomePage/home_page.dart';
 import 'package:universeproject/Screens/Login/login_screen.dart';
-import 'package:universeproject/Screens/Login/login_successful.dart';
 import 'package:universeproject/Screens/SignUp/background.dart';
 
 
@@ -35,18 +35,22 @@ class Body extends StatelessWidget {
           RoundedInputField(
             hintText: "Name",
             onChanges: (value) => {},
+            icon: Icons.person,
           ),
           RoundedInputField(
             hintText: "College",
             onChanges: (value) => {},
+             icon: Icons.school,
           ),
           RoundedInputField(
             hintText: "Year",
             onChanges: (value) => {},
+             icon: Icons.schedule,
           ),
           RoundedInputField(
             hintText: "Branch",
             onChanges: (value) => {},
+            icon: Icons.bookmark,
           ),
           RoundedInputField(
             hintText: "Email",
@@ -63,7 +67,7 @@ class Body extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(context, 
-                MaterialPageRoute(builder: (context){return LoginSuccessful();}),);
+                MaterialPageRoute(builder: (context){return MyHomePage();}),);
               },
               child: const Text(
                 "SIGN UP",

@@ -63,7 +63,6 @@ class Body extends StatelessWidget {
 
              SizedBox(height: size.height * 0.03),
 
-
           Container(
             width: size.width * 0.4,
             child: ElevatedButton(
@@ -82,9 +81,13 @@ class Body extends StatelessWidget {
                 "LOGIN",
                 style: TextStyle(color: kBeigeColor),
               ),
+              
             ),
+           
           ),
+           
           AlreadyHaveAnAccountCheck(press: (){
+            
             Navigator.push(context, MaterialPageRoute(builder: (context){return const SignupScreen();}));
           }),
         ],

@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:universeproject/Components/constants.dart';
-import 'package:universeproject/Screens/Welcome/welcome_screen.dart';
+import 'package:universeproject/Screens/HomePage/home_page.dart';
+
 
 
 class LoginSuccessful extends StatefulWidget {
@@ -17,8 +18,8 @@ class _LoginSuccessfulState extends State<LoginSuccessful> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), (){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const WelcomeScreen(),));
+    Timer(Duration(seconds: 2), (){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage(),));
     });
 
   }

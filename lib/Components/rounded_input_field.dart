@@ -15,7 +15,10 @@ class RoundedInputField extends StatelessWidget {
     return TextFieldContainer(child: TextField(
       onChanged: onChanges,
       decoration: InputDecoration(
-        icon: const Icon(Icons.email, color: kPrimaryColor,),
+       icon: Icon(
+            icon,
+            color: kPrimaryColor,
+          ),
         hintText: hintText,
         hintStyle:const TextStyle(color: Color.fromARGB(193, 85, 39, 1)),
         border: InputBorder.none)
